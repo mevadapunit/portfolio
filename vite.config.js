@@ -1,0 +1,13 @@
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  root: '.',
+  build: {
+    outDir: 'dist',
+    assetsInlineLimit: 0,
+    minify: 'oxc',
+    rollupOptions: {
+      input: 'index.html'
+    }
+  }
+})

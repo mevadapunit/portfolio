@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Punit Mevada — Senior Backend Developer</title>
+<meta name="description" content="Punit Mevada, Senior Backend Developer (PHP / Laravel) in Ahmedabad, India. Backend architecture, database performance and SaaS engineering."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" x-data="{ open: false }">
+    <div class="sb-top-row">
+      <div class="sb-top">
+        <div class="sb-name">
+          <div class="mark">Punit Mevada</div>
+          <div class="role">Senior Backend Developer</div>
+        </div>
+      </div>
+      <button class="sb-toggle" @click="open = !open" :aria-expanded="open" :class="{ 'is-open': open }" aria-controls="mobileMenu" aria-label="Toggle navigation menu">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </button>
+    </div>
+
+    <div class="status"><span class="dot"></span> Open to new roles</div>
+
+    <nav class="sb-nav" id="sbNav">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#process">Process</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="sb-bottom">
+      <div class="loc">Ahmedabad, Gujarat, India</div>
+      <a href="mailto:punitmevada.dev@gmail.com">punitmevada.dev@gmail.com</a>
+      <a href="https://linkedin.com/in/punitmevada" target="_blank" rel="noopener">linkedin.com/in/punitmevada</a>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" :class="open ? 'open' : ''">
+      <a href="#about" @click="open=false">About</a>
+      <a href="#skills" @click="open=false">Skills</a>
+      <a href="#experience" @click="open=false">Experience</a>
+      <a href="#projects" @click="open=false">Projects</a>
+      <a href="#education" @click="open=false">Education</a>
+      <a href="#contact" @click="open=false">Contact</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero">
+      <canvas id="hero3d" aria-hidden="true"></canvas>
+      <img class="hero-avatar" src="/images/profile.jpg" alt="Punit Mevada" width="88" height="88"/>
+      <div class="hero-tag">Available for opportunities</div>
+      <h1>I build the backend infrastructure <span class="accent-word">SaaS products</span> run on.</h1>
+      <p class="sub">Senior Backend Developer working across sports management, healthcare, HR and ride-sharing platforms — specializing in PHP, Laravel, and database performance.</p>
+
+      <div class="hero-ctas">
+        <a href="Punit_Mevada_ATS_CV.docx" download class="btn-primary">Download CV</a>
+        <a href="#projects" class="btn-secondary">View projects</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>4+</b><span>Years experience</span></div>
+        <div class="stat"><b>5+</b><span>SaaS products shipped</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2>Background</h2>
+      <p class="reveal">I've spent the last four years at iSyncEvolution building and maintaining Laravel applications for clients across healthcare, sports, HR and e-commerce. Most of my work sits close to the database — indexing, query tuning, caching strategy — and to the systems around it: role-based access control, subscription billing, real-time notifications, and the APIs that React and mobile clients depend on.</p>
+      <p class="reveal">On the frontend I work comfortably with Blade, Livewire, Inertia and React, though I'd rather spend an afternoon fixing a slow query than picking a component library.</p>
+      <p class="reveal">Recently I've been building AI-assisted tooling into a couple of these products — chat interfaces with streaming responses, and workflow automation — with the same care I'd apply to any production feature: tested, monitored, and built to fail gracefully.</p>
+
+      <div class="pillars reveal" x-data="{ open: null }">
+        <div class="pillar" :class="{ 'is-open': open === 0 }">
+          <button class="pillar-head" @click="open = open === 0 ? null : 0" :aria-expanded="open === 0">
+            <span>Performance &amp; optimization</span>
+            <span class="pillar-plus" :class="{ rotated: open === 0 }">+</span>
+          </button>
+          <div x-show="open === 0" x-collapse class="pillar-body">
+            <p>MySQL indexing, query profiling, Redis caching, load-balanced deployments, zero-downtime releases.</p>
+          </div>
+        </div>
+        <div class="pillar" :class="{ 'is-open': open === 1 }">
+          <button class="pillar-head" @click="open = open === 1 ? null : 1" :aria-expanded="open === 1">
+            <span>Architecture &amp; scalability</span>
+            <span class="pillar-plus" :class="{ rotated: open === 1 }">+</span>
+          </button>
+          <div x-show="open === 1" x-collapse class="pillar-body">
+            <p>Microservices, Docker, AWS EC2/S3/RDS, CI/CD pipelines, RBAC, RESTful and event-driven APIs.</p>
+          </div>
+        </div>
+        <div class="pillar" :class="{ 'is-open': open === 2 }">
+          <button class="pillar-head" @click="open = open === 2 ? null : 2" :aria-expanded="open === 2">
+            <span>Frontend expertise</span>
+            <span class="pillar-plus" :class="{ rotated: open === 2 }">+</span>
+          </button>
+          <div x-show="open === 2" x-collapse class="pillar-body">
+            <p>React, Inertia.js, Livewire, Tailwind CSS — lazy loading, code splitting, asset optimization.</p>
+          </div>
+        </div>
+        <div class="pillar" :class="{ 'is-open': open === 3 }">
+          <button class="pillar-head" @click="open = open === 3 ? null : 3" :aria-expanded="open === 3">
+            <span>AI-powered solutions</span>
+            <span class="pillar-plus" :class="{ rotated: open === 3 }">+</span>
+          </button>
+          <div x-show="open === 3" x-collapse class="pillar-body">
+            <p>Chatbots with conversation history, and AI agent workflows for marketing funnels and job-discovery automation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-facts reveal">
+        <div class="qf-row"><span>Current role</span><b>Sr. Laravel Developer</b></div>
+        <div class="qf-row"><span>Company</span><b>iSyncEvolution Pvt. Ltd.</b></div>
+        <div class="qf-row"><span>Availability</span><b class="accent-text">Open to offers</b></div>
+        <div class="qf-row"><span>Languages</span><b>English, Hindi, Gujarati</b></div>
+        <div class="qf-row"><span>Work type</span><b>On-site / Remote</b></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label">Skills</div>
+      <h2>Tools I use</h2>
+      <div class="stack-grid reveal-group">
+        <div class="stack-cat">
+          <h3>Backend</h3>
+          <p>PHP, Laravel, Node.js, REST APIs, AJAX, Microservices</p>
+        </div>
+        <div class="stack-cat">
+          <h3>Frontend</h3>
+          <p>React.js, Alpine.js, Inertia.js, Livewire, Tailwind CSS, Bootstrap, Blade</p>
+        </div>
+        <div class="stack-cat">
+          <h3>Database</h3>
+          <p>MySQL, PostgreSQL, Redis, Eloquent ORM, Query Builder</p>
+        </div>
+        <div class="stack-cat">
+          <h3>DevOps &amp; cloud</h3>
+          <p>AWS, Docker, Git, Bitbucket, CI/CD, Load balancing</p>
+        </div>
+        <div class="stack-cat">
+          <h3>Integrations</h3>
+          <p>Stripe, Payment APIs, FCM push, Email services, OAuth2</p>
+        </div>
+        <div class="stack-cat">
+          <h3>Patterns &amp; methods</h3>
+          <p>RBAC, MVC, SOLID, Agile/Scrum, SaaS</p>
+        </div>
+        <div class="stack-cat">
+          <h3>AI &amp; automation</h3>
+          <p>AI chatbots, LLM integration, AI agents, workflow automation</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label">Experience</div>
+      <h2>Work history</h2>
+      <div class="job-head reveal">
+        <h3>iSyncEvolution Pvt. Ltd.</h3>
+        <span class="period">Mar 2021 — Present</span>
+      </div>
+      <div class="job-meta reveal">Senior PHP Laravel Developer · Ahmedabad, India</div>
+      <ul class="job-list reveal">
+        <li>Architected and delivered 5+ full-stack SaaS products across healthcare, sports, HR and e-commerce.</li>
+        <li>Built REST APIs consumed by React and mobile clients, with JWT authentication and role-based access control.</li>
+        <li>Integrated Stripe subscription billing, including webhook handling and invoice generation.</li>
+        <li>Built AI chat tooling with conversation history and workflow automation for marketing and job-discovery use cases.</li>
+        <li>Deployed and managed infrastructure on AWS (EC2, S3, RDS) using Docker containers and CI/CD pipelines.</li>
+        <li>Reduced average page load time by 40% through MySQL indexing and query restructuring.</li>
+        <li>Ran sprint planning and code reviews as Scrum Master across cross-functional teams.</li>
+      </ul>
+    </section>
+
+    <!-- PROCESS / AGILE -->
+    <section id="process">
+      <div class="section-label">Process</div>
+      <h2>How I work</h2>
+      <p style="color:var(--ink-soft); max-width:36em; margin-bottom:28px;">Every project — mine or a client's — runs on the same Agile loop I've used as a certified Scrum Master, just compressed to fit the size of the job.</p>
+      <div class="process-timeline reveal">
+        <div class="t-step">
+          <div class="t-dot">1</div>
+          <h3>Discover</h3>
+          <p>Understand the goal, the users, and the real constraints before writing a line of code.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-dot">2</div>
+          <h3>Plan sprints</h3>
+          <p>Break scope into short, demoable sprints — usually 1–2 weeks — with a clear definition of done.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-dot">3</div>
+          <h3>Build &amp; standup</h3>
+          <p>Ship in small, tested increments. Daily standups keep blockers visible instead of buried.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-dot">4</div>
+          <h3>Review &amp; demo</h3>
+          <p>Every sprint ends with a working demo, not a status report — the client sees real progress.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-dot">5</div>
+          <h3>Retrospect</h3>
+          <p>What worked, what didn't, what changes next sprint. Small corrections, made early and often.</p>
+        </div>
+        <div class="t-step">
+          <div class="t-dot">6</div>
+          <h3>Ship &amp; iterate</h3>
+          <p>Release, gather real feedback, and loop back into planning for the next cycle.</p>
+        </div>
+      </div>
+      <div class="t-loop">↻ repeats every cycle, start to launch</div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">Projects</div>
+      <h2>Selected work</h2>
+
+      <div class="project reveal" x-data="{ active: 0, shots: ['/images/apex-afc-1.jpg','/images/apex-afc-2.jpg'] }">
+        <div class="project-shot">
+          <img :src="shots[active]" alt="Apex AFC scheduling dashboard" loading="lazy" width="1346" height="620"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <button @click="active=0" :class="{ active: active===0 }" aria-label="View screenshot 1"><img src="/images/apex-afc-1.jpg" alt=""/></button>
+          <button @click="active=1" :class="{ active: active===1 }" aria-label="View screenshot 2"><img src="/images/apex-afc-2.jpg" alt=""/></button>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>Apex AFC</h3>
+            <span class="project-cat">Healthcare management SaaS</span>
+          </div>
+          <p class="desc">An adult foster care management platform for caregivers and administrators. Handles member and appointment scheduling, a visual weekly calendar for caregiver shifts, role-based access, leave tracking and reporting dashboards.</p>
+          <div class="tech">Laravel · MySQL · React · FullCalendar · RBAC</div>
+        </div>
+      </div>
+
+      <div class="project reveal" x-data="{ active: 0, shots: ['/images/ivolley-1.jpg','/images/ivolley-2.jpg'] }">
+        <div class="project-shot">
+          <img :src="shots[active]" alt="iVolley team calendar and attendance dashboard" loading="lazy" width="1364" height="650"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <button @click="active=0" :class="{ active: active===0 }" aria-label="View screenshot 1"><img src="/images/ivolley-1.jpg" alt=""/></button>
+          <button @click="active=1" :class="{ active: active===1 }" aria-label="View screenshot 2"><img src="/images/ivolley-2.jpg" alt=""/></button>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>iVolley</h3>
+            <span class="project-cat">Multi-tenant sports club platform</span>
+          </div>
+          <p class="desc">Club and team management for sports organizations — training schedules, championship tracking, attendance, and a calendar view with quick stats for admins switching between teams.</p>
+          <div class="tech">Laravel · MySQL · React · Stripe · FCM</div>
+        </div>
+      </div>
+
+      <div class="project reveal" x-data="{ active: 0, shots: ['/images/isync-hr-portal-1.jpg','/images/isync-hr-portal-2.jpg'] }">
+        <div class="project-shot">
+          <img :src="shots[active]" alt="iSync HR Portal attendance dashboard" loading="lazy" width="864" height="493"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <button @click="active=0" :class="{ active: active===0 }" aria-label="View screenshot 1"><img src="/images/isync-hr-portal-1.jpg" alt=""/></button>
+          <button @click="active=1" :class="{ active: active===1 }" aria-label="View screenshot 2"><img src="/images/isync-hr-portal-2.jpg" alt=""/></button>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>iSync HR Portal</h3>
+            <span class="project-cat">Internal HR management system</span>
+          </div>
+          <p class="desc">Attendance tracking with a yearly calendar view, project-based scheduling, employee timesheets, leave management and reporting.</p>
+          <div class="tech">Laravel · MySQL · jQuery · Chart.js</div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-shot">
+          <img src="/images/yo-playbook-1.jpg" alt="Yo Playbook interactive play designer" loading="lazy" width="685" height="500"/>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>Yo Playbook</h3>
+            <span class="project-cat">Sports e-commerce platform</span>
+          </div>
+          <p class="desc">Lets coaches design interactive plays, manage team schedules and sell training content, with a shared codebase across web and mobile.</p>
+          <div class="tech">Laravel · React · MySQL · Stripe · AWS S3</div>
+        </div>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-shot">
+          <img src="/images/snapride-1.jpg" alt="Snapride ride-sharing landing page" loading="lazy" width="906" height="563"/>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>Snapride</h3>
+            <span class="project-cat">Ride-sharing platform, Australia</span>
+          </div>
+          <p class="desc">A ride-sharing platform built for the Australian market — cashless payments, fixed pricing, real-time tracking, driver onboarding, and the consumer-facing landing page.</p>
+          <div class="tech">Laravel · PHP · Node.js · MySQL · Firebase · Google Maps · FCM</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="section-label">Education</div>
+      <h2>Qualifications</h2>
+      <div class="edu-item reveal">
+        <div>
+          <div class="deg">MCA — Master of Computer Applications</div>
+          <div class="school">Hemchandracharya North Gujarat University · First Class</div>
+        </div>
+        <div class="when">2019 — 2021</div>
+      </div>
+      <div class="edu-item reveal">
+        <div>
+          <div class="deg">BCA — Bachelor of Computer Applications</div>
+          <div class="school">Hemchandracharya North Gujarat University</div>
+        </div>
+        <div class="when">2016 — 2019</div>
+      </div>
+      <div class="edu-item reveal">
+        <div>
+          <div class="deg">Agile Scrum Master, Certified</div>
+          <div class="school">Simplilearn</div>
+        </div>
+        <div class="when">2025</div>
+      </div>
+    </section>
+
+    <!-- TRUST / CTA -->
+    <section id="trust">
+      <div class="section-label">Why work with me</div>
+      <h2>Built on trust, not just delivery</h2>
+      <div class="trust-banner reveal">
+        <p>I build <span class="accent-word">trust</span> the same way I build software — one reliable delivery at a time.</p>
+        <p class="trust-sub">Every project gets more than what's asked for. If it takes an extra evening to get an edge case right, or a second look at the architecture before it ships, that's what happens — because your dream project deserves full effort, not the minimum viable one.</p>
+        <a href="#contact" class="btn-primary">Let's connect for your dream project</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <h2>Let's talk</h2>
+      <p class="sub">Open to senior roles, freelance projects and remote opportunities worldwide.</p>
+      <div class="contact-grid reveal-group">
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:punitmevada.dev@gmail.com">punitmevada.dev@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Phone</span>
+          <a href="tel:+917016569838">+91 70165 69838</a>
+        </div>
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="https://linkedin.com/in/punitmevada" target="_blank" rel="noopener">linkedin.com/in/punitmevada</a>
+        </div>
+        <div class="contact-item">
+          <span>Location</span>
+          <div>Ahmedabad, Gujarat, India</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 Punit Mevada</footer>
+
+  </main>
+</div>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
