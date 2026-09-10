@@ -235,6 +235,23 @@
       <div class="section-label">Projects</div>
       <h2>Selected work</h2>
 
+      <div class="project reveal">
+        <div class="project-shot">
+          <img src="/images/slm-domiciliation-1.jpg" alt="SLM Domiciliation business address registration homepage" loading="lazy" width="1400" height="668"/>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>SLM Domiciliation</h3>
+            <span class="project-cat">Company domiciliation &amp; compliance SaaS, France</span>
+          </div>
+          <p class="desc">A full company-domiciliation platform for the French market, built as a Turborepo monorepo: public marketing site, subscription funnel, client portal and back-office admin panel, sharing one API and type-safe packages across all three front-ends. Handles KYC verification, e-signature, subscription billing and an exportable regulatory register of domiciled companies and their representatives.</p>
+          <p class="desc">Security was built in from the start rather than bolted on: rotating refresh tokens stored hashed, bcrypt at cost 12 everywhere including internal tooling, mandatory email verification before a user record even exists, TOTP for staff accounts, AES-256-GCM for every secret at rest, and HMAC-verified webhooks with an event ledger to block replay attacks. Separate rate-limit budgets protect auth, webhooks, public forms and general traffic independently.</p>
+          <div class="tech">Next.js 16 (App Router) · Express · Prisma · PostgreSQL · Redis · TypeScript · Turborepo &amp; pnpm</div>
+          <div class="tech">Didit KYC · Yousign · Stripe · TinyMCE · GA4 &amp; Google Ads conversion tracking</div>
+          <a class="project-link" href="https://slmdomiciliation.fr/" target="_blank" rel="noopener">View live site<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        </div>
+      </div>
+
       <div class="project reveal" x-data="{ active: 0, shots: ['/images/apex-afc-1.jpg','/images/apex-afc-2.jpg'] }">
         <div class="project-shot">
           <img :src="shots[active]" alt="Apex AFC scheduling dashboard" loading="lazy" width="1346" height="620"/>
@@ -247,10 +264,11 @@
         <div class="project-info">
           <div class="project-head">
             <h3>Apex AFC</h3>
-            <span class="project-cat">Healthcare management SaaS</span>
+            <span class="project-cat">Healthcare management SaaS, USA</span>
           </div>
           <p class="desc">An adult foster care management platform for caregivers and administrators. Handles member and appointment scheduling, a visual weekly calendar for caregiver shifts, role-based access, leave tracking and reporting dashboards.</p>
           <div class="tech">Laravel · MySQL · React · FullCalendar · RBAC</div>
+          <a class="project-link" href="https://apexafc.com/" target="_blank" rel="noopener">View live site<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
         </div>
       </div>
 
@@ -266,7 +284,7 @@
         <div class="project-info">
           <div class="project-head">
             <h3>iVolley</h3>
-            <span class="project-cat">Multi-tenant sports club platform</span>
+            <span class="project-cat">Multi-tenant sports club platform, Italy</span>
           </div>
           <p class="desc">Club and team management for sports organizations — training schedules, championship tracking, attendance, and a calendar view with quick stats for admins switching between teams.</p>
           <div class="tech">Laravel · MySQL · React · Stripe · FCM</div>
@@ -285,7 +303,7 @@
         <div class="project-info">
           <div class="project-head">
             <h3>iSync HR Portal</h3>
-            <span class="project-cat">Internal HR management system</span>
+            <span class="project-cat">Internal HR management system, In-house</span>
           </div>
           <p class="desc">Attendance tracking with a yearly calendar view, project-based scheduling, employee timesheets, leave management and reporting.</p>
           <div class="tech">Laravel · MySQL · jQuery · Chart.js</div>
@@ -299,7 +317,7 @@
         <div class="project-info">
           <div class="project-head">
             <h3>Yo Playbook</h3>
-            <span class="project-cat">Sports e-commerce platform</span>
+            <span class="project-cat">Sports e-commerce platform, USA</span>
           </div>
           <p class="desc">Lets coaches design interactive plays, manage team schedules and sell training content, with a shared codebase across web and mobile.</p>
           <div class="tech">Laravel · React · MySQL · Stripe · AWS S3</div>
@@ -317,6 +335,7 @@
           </div>
           <p class="desc">A ride-sharing platform built for the Australian market — cashless payments, fixed pricing, real-time tracking, driver onboarding, and the consumer-facing landing page.</p>
           <div class="tech">Laravel · PHP · Node.js · MySQL · Firebase · Google Maps · FCM</div>
+        <a class="project-link" href="https://www.snapride.app/" target="_blank" rel="noopener">View live site<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
         </div>
       </div>
     </section>
