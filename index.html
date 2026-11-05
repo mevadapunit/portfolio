@@ -235,20 +235,119 @@
       <div class="section-label">Projects</div>
       <h2>Selected work</h2>
 
-      <div class="project reveal">
+      <div class="project reveal" x-data="{ active: 0, shots: [
+        { src: '/images/slm-domiciliation-1.jpg', alt: 'SLM Domiciliation business address registration homepage' },
+        { src: '/images/slm-domiciliation-2.jpg', alt: 'SLM Domiciliation admin dashboard with subscriptions, KYC and activity log' }
+      ] }">
         <div class="project-shot">
-          <img src="/images/slm-domiciliation-1.jpg" alt="SLM Domiciliation business address registration homepage" loading="lazy" width="1400" height="668"/>
+          <img :src="shots[active].src" :alt="shots[active].alt" loading="lazy" width="1400" height="676"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <template x-for="(s, i) in shots" :key="s.src">
+            <button @click="active = i" :class="{ active: active === i }" :aria-label="'View screenshot ' + (i + 1)"><img :src="s.src" alt=""/></button>
+          </template>
         </div>
         <div class="project-info">
           <div class="project-head">
             <h3>SLM Domiciliation</h3>
             <span class="project-cat">Company domiciliation &amp; compliance SaaS, France</span>
           </div>
-          <p class="desc">A full company-domiciliation platform for the French market, built as a Turborepo monorepo: public marketing site, subscription funnel, client portal and back-office admin panel, sharing one API and type-safe packages across all three front-ends. Handles KYC verification, e-signature, subscription billing and an exportable regulatory register of domiciled companies and their representatives.</p>
+          <p class="desc">A full company-domiciliation platform for the French market, built as a Turborepo monorepo: public marketing site, subscription funnel, client portal and back-office admin panel, sharing one API and type-safe packages across all three front-ends. Handles KYC verification, e-signature, subscription billing, company-registry lookups (SIREN/SIRET and director matching), branded PDF contracts, attestations and invoices, and an exportable regulatory register of domiciled companies and their representatives.</p>
           <p class="desc">Security was built in from the start rather than bolted on: rotating refresh tokens stored hashed, bcrypt at cost 12 everywhere including internal tooling, mandatory email verification before a user record even exists, TOTP for staff accounts, AES-256-GCM for every secret at rest, and HMAC-verified webhooks with an event ledger to block replay attacks. Separate rate-limit budgets protect auth, webhooks, public forms and general traffic independently.</p>
-          <div class="tech">Next.js 16 (App Router) · Express · Prisma · PostgreSQL · Redis · TypeScript · Turborepo &amp; pnpm</div>
-          <div class="tech">Didit KYC · Yousign · Stripe · TinyMCE · GA4 &amp; Google Ads conversion tracking</div>
+          <div class="tech">Next.js 16 (App Router) · React 19 · Express · Prisma · PostgreSQL · Redis · TypeScript · Turborepo &amp; pnpm</div>
+          <div class="tech">Tailwind · next-intl (FR/EN) · react-hook-form &amp; Zod · Jest · Pino</div>
+          <div class="tech">Didit KYC · Yousign · Stripe · French company registry API · GA4 &amp; Google Ads conversion tracking</div>
           <a class="project-link" href="https://slmdomiciliation.fr/" target="_blank" rel="noopener">View live site<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          <a class="project-link" href="https://dashboard.slmdomiciliation.fr/connexion" target="_blank" rel="noopener">Admin dashboard login<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project reveal" x-data="{ active: 0, shots: [
+        { src: '/images/spartan-couriers-1.jpg', alt: 'Spartan Couriers landing page with live parcel tracking preview' },
+        { src: '/images/spartan-couriers-2.jpg', alt: 'Spartan Couriers admin dashboard with live orders and alerts' },
+        { src: '/images/spartan-couriers-3.jpg', alt: 'Spartan Couriers pricing rules editor with live quote preview' }
+      ] }">
+        <div class="project-shot">
+          <img :src="shots[active].src" :alt="shots[active].alt" loading="lazy" width="1400" height="676"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <template x-for="(s, i) in shots" :key="s.src">
+            <button @click="active = i" :class="{ active: active === i }" :aria-label="'View screenshot ' + (i + 1)"><img :src="s.src" alt=""/></button>
+          </template>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>Spartan Couriers</h3>
+            <span class="project-cat">On-demand courier &amp; delivery platform, UK</span>
+          </div>
+          <p class="desc">A courier booking platform with a customer site and app flow, driver onboarding and a back-office admin. Customers book in under a minute and follow the parcel live; drivers go through a compliance checklist (licence, DBS, hire and reward insurance, goods in transit) before they are approved; staff run the day from a live dashboard with fleet view, dispatch, driver approvals, payments, withdrawals and support tickets.</p>
+          <p class="desc">Pricing is fully rule-driven: base fare, per-mile, drop-offs, urgent and same-day options, parcel size, peak-hour windows, minimum fare and promo codes, with a live quote preview before anything is saved. Chat, job offers and admin updates run over WebSockets. Bank details and National Insurance numbers are encrypted with AES-256-GCM, and the API is covered by 792 tests run against a real database.</p>
+          <div class="tech">Node.js 20 · TypeScript · Express · Prisma · PostgreSQL 16 · WebSocket · RabbitMQ · Zod</div>
+          <div class="tech">Next.js 14 · React 18 · Tailwind · JWT &amp; refresh tokens · Vitest &amp; Supertest · Pino · Prometheus</div>
+          <a class="project-link" href="https://spartancouriers.demo-available.com/" target="_blank" rel="noopener">View live demo<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project reveal" x-data="{ active: 0, shots: [
+        { src: '/images/tattoome-1.jpg', alt: 'TattooMe admin dashboard with plans, subscriptions and calendar' },
+        { src: '/images/tattoome-2.jpg', alt: 'TattooMe payments page with revenue split between artist and shop' },
+        { src: '/images/tattoome-3.jpg', alt: 'TattooMe AI artwork import from a ZIP of artist photos' },
+        { src: '/images/tattoome-4.jpg', alt: 'TattooMe queues and workers monitoring page with throughput chart' }
+      ] }">
+        <div class="project-shot">
+          <img :src="shots[active].src" :alt="shots[active].alt" loading="lazy" width="1400" height="676"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <template x-for="(s, i) in shots" :key="s.src">
+            <button @click="active = i" :class="{ active: active === i }" :aria-label="'View screenshot ' + (i + 1)"><img :src="s.src" alt=""/></button>
+          </template>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>TattooMe</h3>
+            <span class="project-cat">Tattoo artist &amp; studio management SaaS, USA</span>
+          </div>
+          <p class="desc">An admin console for a tattoo platform: artists sign up on tiered subscription plans, customers book through quotes and appointments, and the calendar tracks each booking through deposit due, confirmed, verified, rescheduled and rejected states. Payments split revenue between artist and shop, handle tips and card-fee reimbursement, and feed a 1099 report.</p>
+          <p class="desc">An AI artwork import turns a ZIP of an artist's photos into a catalogue, with each image titled, styled and described automatically. It runs on background queues, with a monitoring page for throughput, retries, failed jobs and worker health, alongside reminders, renewals and referral jobs on a schedule.</p>
+          <div class="tech">Subscription billing · AI image tagging · Background job queues &amp; workers · Scheduled jobs · 1099 reporting</div>
+          <a class="project-link" href="https://admintattoome.demo-available.com/" target="_blank" rel="noopener">View admin demo<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        </div>
+      </div>
+
+      <div class="project reveal" x-data="{ active: 0, shots: [
+        { src: '/images/restaurant-billing-pos-1.jpg', alt: 'Restaurant POS table ordering screen with menu photos, categories and guest seats' },
+        { src: '/images/restaurant-billing-pos-2.jpg', alt: 'Restaurant POS bill payment screen with cash, UPI and card and GST breakdown' },
+        { src: '/images/restaurant-billing-pos-3.jpg', alt: 'Bill template chooser with receipt styles and live print preview' },
+        { src: '/images/restaurant-billing-pos-4.jpg', alt: 'Menu designs gallery for printed menus, TV screens and WhatsApp posts' },
+        { src: '/images/restaurant-billing-pos-5.jpg', alt: 'Drag-and-drop menu designer with live prices linked to the menu' },
+        { src: '/images/restaurant-billing-pos-6.jpg', alt: 'Menu item editor with Hindi and Gujarati names, tags and photo tools' },
+        { src: '/images/restaurant-billing-pos-7.jpg', alt: 'Shop owner dashboard with daily profit, sales, order status and kitchen speed' },
+        { src: '/images/restaurant-billing-pos-8.jpg', alt: 'Staff management with roles, shifts and pay, plus attendance and leave tabs' },
+        { src: '/images/restaurant-billing-1.jpg', alt: 'Platform admin overview with revenue and customer health' },
+        { src: '/images/restaurant-billing-2.jpg', alt: 'Platform admin customer list with plans, renewals and devices' }
+      ] }">
+        <div class="project-shot">
+          <img :src="shots[active].src" :alt="shots[active].alt" loading="lazy" width="1400" height="676"/>
+          <span class="shot-count" x-text="(active+1) + ' / ' + shots.length"></span>
+        </div>
+        <div class="shot-thumbs">
+          <template x-for="(s, i) in shots" :key="s.src">
+            <button @click="active = i" :class="{ active: active === i }" :aria-label="'View screenshot ' + (i + 1)"><img :src="s.src" alt=""/></button>
+          </template>
+        </div>
+        <div class="project-info">
+          <div class="project-head">
+            <h3>Restaurant Billing Platform</h3>
+            <span class="project-cat">Offline-first billing SaaS for restaurants, India</span>
+          </div>
+          <p class="desc">A billing system for restaurants, cafes and quick-service shops that keeps working when the internet drops. The shop app caches its files and photos, journals every action offline and replays it in order once it reconnects; a small on-premises hub lets several devices in one shop share work with no connection at all. The same app is packaged as a web app, desktop apps (Tauri) and phone apps (Capacitor).</p>
+          <p class="desc">Front of house covers dine-in tables with per-guest ordering, kitchen tickets with live timelines, split payments (cash, UPI, card) with CGST/SGST invoices, and five printable bill styles for 58 mm to A4 printers. A built-in design studio produces printed menus, table cards, TV boards, WhatsApp posts and a QR menu, with prices staying linked to the live menu. Dishes carry Hindi and Gujarati names for staff and kitchen tickets. Owners get a daily profit dashboard (sales, GST collected, kitchen speed, top items, staff performance) and staff management with roles, shifts, attendance, leave and pay.</p>
+          <p class="desc">A separate master console runs the business side: customers with GSTIN, plans and per-shop pricing, renewals and invoices, partners, hosting, device approvals, support and system health. The demo runs on 301 sample shops. The audit log is hash-chained, and the interface is available in Hindi and Gujarati.</p>
+          <div class="tech">Laravel 12 · PHP 8.4 · PostgreSQL 16 · Sanctum · Laravel Reverb · Docker</div>
+          <div class="tech">Vue 3 · TypeScript · Pinia · Vite · Tauri 2 · Capacitor 6 · Node.js hub · PHPUnit &amp; Vitest</div>
         </div>
       </div>
 
@@ -333,8 +432,9 @@
             <h3>Snapride</h3>
             <span class="project-cat">Ride-sharing platform, Australia</span>
           </div>
-          <p class="desc">A ride-sharing platform built for the Australian market — cashless payments, fixed pricing, real-time tracking, driver onboarding, and the consumer-facing landing page.</p>
-          <div class="tech">Laravel · PHP · Node.js · MySQL · Firebase · Google Maps · FCM</div>
+          <p class="desc">A ride-sharing platform built for the Australian market — cashless payments, fixed pricing, real-time tracking, driver onboarding, and the consumer-facing landing page. Includes a Laravel admin panel with data tables, Excel exports and database-stored SMTP settings, plus an in-house help desk.</p>
+          <div class="tech">Laravel 12 · PHP 8.4 · MySQL 8 · Sanctum · Stripe · Node.js · Firebase · Google Maps · FCM</div>
+          <div class="tech">Blade · Bootstrap 5 · jQuery · Yajra DataTables · Intervention Image · reCAPTCHA</div>
         <a class="project-link" href="https://www.snapride.app/" target="_blank" rel="noopener">View live site<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
         </div>
       </div>

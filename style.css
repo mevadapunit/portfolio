@@ -286,7 +286,7 @@ ul.job-list li::before { content: ""; position: absolute; left: 0; top: 0.6em; w
   letter-spacing: 0.02em;
 }
 
-.shot-thumbs { display: flex; gap: 8px; margin-top: 10px; }
+.shot-thumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .shot-thumbs button {
   padding: 0;
   width: 76px;
@@ -314,6 +314,7 @@ ul.job-list li::before { content: ""; position: absolute; left: 0; top: 0.6em; w
   align-items: center;
   gap: 6px;
   margin-top: 14px;
+  margin-right: 8px;
   padding: 9px 16px;
   border-radius: 6px;
   background: var(--accent);
